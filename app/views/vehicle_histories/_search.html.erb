@@ -1,0 +1,13 @@
+<!-- app/views/vehicle_histories/_search.html.erb -->
+
+<%= form_tag(search_vehicle_histories_path, method: :get) do %>
+  <div class="field">
+    <%= label_tag :registration_number, 'Enter Vehicle Registration Number:' %>
+    <%= text_field_tag :registration_number, params[:registration_number] %>
+  </div>
+<br>
+  <%= submit_tag 'Search' %>
+<% end %>
+<br>
+<%= link_to 'Back', parking_slots_path(@parking_slot), method: :post %>
+

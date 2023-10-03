@@ -1,0 +1,34 @@
+<!-- app/views/vehicle_histories/search.html.erb -->
+
+<h1>Vehicle History Search Results</h1>
+
+<%= render 'search' %>
+
+<% if @vehicle_histories.any? %>
+  <table>
+    <thead>
+    <tr>
+      <th>Vehicle Registration Number</th>
+      <th>Entry Point</th>
+      <th>Parking Slot</th>
+      <th>Status</th>
+      <th>Entered At</th>
+      <th>Exited At</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @vehicle_histories.each do |history| %>
+      <tr>
+        <td><%= history.vehicle.registration_number %></td>
+        <td><%= history.entry_point %></td>
+        <td><%= history.parking_slot.number %></td>
+        <td><%= history.status %></td>
+        <td><%= history.entered_at %></td>
+        <td><%= history.exited_at %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No vehicle history found for the provided registration number.</p>
+<% end %>

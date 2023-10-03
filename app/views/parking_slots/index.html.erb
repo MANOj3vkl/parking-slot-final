@@ -1,0 +1,13 @@
+<h1>Available Parking Slots</h1>
+<% if @available_slots.any? %>
+  <ul>
+    <% @available_slots.each do |slot| %>
+      <li class="parking-slot">
+        Slot Number: <%= slot.number %><br>
+        Entry Point: <%= slot.entry_point %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No available parking slots at the moment.</p>
+<% end %>

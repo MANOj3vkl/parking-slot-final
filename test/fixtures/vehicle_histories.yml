@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle: one
+  entry_point: 1
+  parking_slot: one
+  status: MyString
+  entered_at: 2023-10-01 10:24:34
+  exited_at: 2023-10-01 10:24:34
+
+two:
+  vehicle: two
+  entry_point: 1
+  parking_slot: two
+  status: MyString
+  entered_at: 2023-10-01 10:24:34
+  exited_at: 2023-10-01 10:24:34

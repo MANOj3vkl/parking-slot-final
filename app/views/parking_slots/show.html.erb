@@ -1,0 +1,24 @@
+<h1>Parking Slot Details</h1>
+<%= render 'shared/messages' %>
+
+<% if @parking_slot %>
+  <p>Slot Number: <%= @parking_slot.number %></p>
+  <p>Entry Point: <%= @parking_slot.entry_point %></p>
+  <p>Status: <%= @parking_slot.status %></p>
+
+  <!-- Form for entering vehicle registration number -->
+  <%= form_with(model: @vehicle, url: vehicles_path, method: :post) do |form| %>
+    <div class="field">
+      <br>
+      <%= form.label :registration_number, 'Enter Vehicle Registration Number' %>
+      <%= form.text_field :registration_number %>
+    </div>
+    <br>
+    <%= form.submit 'Register Vehicle' %>
+  <% end %>
+
+  <%= link_to 'Exit Parking', parking_slot_exit_path(@parking_slot), method: :post %>
+  <%= link_to 'View Parking Slot', parking_slots_path(entry_point: @parking_slot.entry_point) %>
+<% else %>
+  <p>No parking slot available at this entry point.</p>
+<% end %>

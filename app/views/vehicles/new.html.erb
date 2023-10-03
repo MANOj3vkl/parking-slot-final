@@ -1,0 +1,19 @@
+<%= form_with(model: @vehicle, url: vehicles_path, method: :post, class: 'vehicle-form') do |form| %>
+  <div class="display">
+    <div class="field">
+      <%= form.label :entry_point, 'Entry Point Number:', class: 'form-label' %>
+      <%= form.number_field :entry_point, min: 1, max: 4, class: 'form-input' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :registration_number, 'Vehicle Registration Number:', class: 'form-label' %>
+      <%= form.text_field :registration_number, class: 'form-input' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Enter Parking', class: 'submit-button' %>
+    </div>
+<% end %>
+<br>
+<%= link_to 'Search Vehicle History', vehicle_histories_search_path, class: 'btn btn-primary' %>
+</div>
